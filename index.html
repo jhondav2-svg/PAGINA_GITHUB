@@ -1,25 +1,242 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>CINEBOT | Tu asistente de cine</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #080808;
+            color: white;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #e50914;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #e50914;
+        }
+
+        .inicio {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(#000000aa, #080808);
+        }
+
+        .inicio h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .inicio h1 span {
+            color: #e50914;
+        }
+
+        .inicio p {
+            font-size: 20px;
+            color: #ccc;
+            max-width: 650px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            background-color: #e50914;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #ff2732;
+            transform: scale(1.05);
+        }
+
+        .peliculas {
+            padding: 60px 8%;
+        }
+
+        .peliculas h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .contenedor-peliculas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .pelicula {
+            background-color: #161616;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-8px);
+        }
+
+        .poster {
+            height: 280px;
+            background: linear-gradient(135deg, #252525, #700008);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .pelicula-info {
+            padding: 20px;
+        }
+
+        .pelicula-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .pelicula-info p {
+            color: #aaa;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .inicio h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Mi primera página web en GitHub Pages</h1>
+    <header>
+        <div class="logo">🎬 CINEBOT</div>
 
-    <p>
-        Esta página web fue creada para realizar una práctica
-        utilizando Git, GitHub y GitHub Pages.
-    </p>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#peliculas">Películas</a>
+            <a href="#estrenos">Estrenos</a>
+            <a href="#cinebot">CineBot</a>
+        </nav>
+    </header>
 
-    <h2>Bienvenido</h2>
+    <section class="inicio" id="inicio">
 
-    <p>
-        Mi sitio web está publicado utilizando GitHub Pages.
-    </p>
+        <h1>TODO EL CINE <span>EN UN SOLO LUGAR</span></h1>
+
+        <p>
+            Descubre películas, próximos estrenos, recomendaciones
+            y mucho más con CINEBOT, tu asistente de cine.
+        </p>
+
+        <a href="#peliculas" class="boton">
+            Explorar películas
+        </a>
+
+    </section>
+
+    <section class="peliculas" id="peliculas">
+
+        <h2>🔥 Películas destacadas</h2>
+
+        <div class="contenedor-peliculas">
+
+            <div class="pelicula">
+                <div class="poster">🎬</div>
+
+                <div class="pelicula-info">
+                    <h3>Avengers</h3>
+                    <p>Acción • Ciencia ficción</p>
+                </div>
+            </div>
+
+            <div class="pelicula">
+                <div class="poster">🎥</div>
+
+                <div class="pelicula-info">
+                    <h3>Shrek 5</h3>
+                    <p>Animación • Aventura</p>
+                </div>
+            </div>
+
+            <div class="pelicula">
+                <div class="poster">🍿</div>
+
+                <div class="pelicula-info">
+                    <h3>Coyote vs Acme</h3>
+                    <p>Comedia • Animación</p>
+                </div>
+            </div>
+
+            <div class="pelicula">
+                <div class="poster">🤖</div>
+
+                <div class="pelicula-info">
+                    <h3>Próximamente</h3>
+                    <p>Nuevas películas en CINEBOT</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>🎬 CINEBOT | Tu asistente de películas</p>
+        <p>© 2026 CINEBOT</p>
+    </footer>
 
 </body>
+
 </html>
